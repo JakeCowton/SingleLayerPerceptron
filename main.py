@@ -27,13 +27,16 @@ def normalise(data):
     return temp_list
 
 def main(data):
+
     # Normalise the data
     training_data = normalise(data)
+
     # Create the perceptron
     p = Perceptron(len(data[0][0]))
 
     # Number of full iterations
     epochs = 0
+
     # Instantiate mse for the loop
     mse =999
 
@@ -44,10 +47,13 @@ def main(data):
 
         # For each set in the training_data
         for value in training_data:
+
             # Calculate the result
             output = p.result(value[0])
+
             # Calculate the error
             iter_error = value[1] - output
+
             # Add the error to the epoch error
             error += iter_error
 
